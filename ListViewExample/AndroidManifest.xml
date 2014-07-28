@@ -28,6 +28,15 @@
         <activity
             android:name=".SimpleListViewActivity"
             android:label="@string/title_activity_simple_list_view" >
+           <!--  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".ListViewPopupWithAdapterActivity"
+            android:label="@string/title_activity_list_view_popup_with_adapter" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
