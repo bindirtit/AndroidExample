@@ -1,4 +1,4 @@
-package com.sharesnippetcode.listviewexample;
+package com.sharesnippetcode.listviewpopupwithadapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
-import com.sharesnippetcode.listviewpopupwithadapter.ArrayAdapterItem;
-import com.sharesnippetcode.listviewpopupwithadapter.ObjectItem;
-import com.sharesnippetcode.listviewpopupwithadapter.OnItemClickListenerListViewItem;
+import com.sharesnippetcode.listviewexample.R;
 
 public class ListViewPopupWithAdapterActivity extends Activity {
 

@@ -1,6 +1,5 @@
 package com.sharesnippetcode.listviewpopupwithadapter;
 
-import com.sharesnippetcode.listviewexample.ListViewPopupWithAdapterActivity;
 import com.sharesnippetcode.listviewexample.R;
 
 import android.content.Context;
