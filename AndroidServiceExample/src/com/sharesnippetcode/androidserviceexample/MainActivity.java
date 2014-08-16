@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -41,5 +42,17 @@ public class MainActivity extends ActionBarActivity {
 	
 	public void stopService(View view){
 		stopService(new Intent(getBaseContext(), MyService.class));
+	}
+	
+	//com.sharesnippetcode.android.A_CUSTOM_INTENT
+	public void broadcastCustomIntent(View view){
+		
+		EditText et = (EditText) this.findViewById(R.id.extraIntent);
+		
+		Intent intent = new Intent("MyCustomIntent");
+		intent.setAction("com.sharesnippetcode.android.A_CUSTOM_INTENT");
+		intent.putExtra("message", (CharSequence)et.getText().toString());
+		
+		this.sendBroadcast(intent);
 	}
 }

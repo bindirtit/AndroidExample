@@ -25,6 +25,11 @@
 
         <service android:name="com.sharesnippetcode.androidserviceexample.MyService" >
         </service>
+        <receiver android:name="com.sharesnippetcode.androidserviceexample.MyBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.sharesnippetcode.android.A_CUSTOM_INTENT"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
