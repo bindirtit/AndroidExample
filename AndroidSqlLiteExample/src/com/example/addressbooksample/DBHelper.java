@@ -13,7 +13,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
 	public static final String DATABASE_NAME = "MyDBName.db";
 	public static final String TABLE_NAME = "contacts";
-	   public static final String CONTACTS_COLUMN_NAME = "name";
+	public static final String CONTACTS_COLUMN_NAME = "name";
+	public static final String CONTACTS_COLUMN_ID = "id";
+	public static final String CONTACTS_COLUMN_EMAIL = "email";
+	public static final String CONTACTS_COLUMN_STREET = "street";
+	public static final String CONTACTS_COLUMN_CITY = "place";
+	public static final String CONTACTS_COLUMN_PHONE = "phone";
 
 	public DBHelper(Context context) {
 		super(context, DATABASE_NAME, null, 1);
@@ -74,23 +79,25 @@ public class DBHelper extends SQLiteOpenHelper {
 		contentValues.put("street", street);
 		contentValues.put("place", place);
 
-		db.update(TABLE_NAME, contentValues, "id = ?", new String[]{Integer.toString(id)});
+		db.update(TABLE_NAME, contentValues, "id = ?",
+				new String[] { Integer.toString(id) });
 		return true;
 	}
-	
-	public Integer deleteContact(Integer id){
+
+	public Integer deleteContact(Integer id) {
 		SQLiteDatabase db = this.getWritableDatabase();
-		return db.delete(TABLE_NAME, "id = ?", new String[]{Integer.toString(id)});
+		return db.delete(TABLE_NAME, "id = ?",
+				new String[] { Integer.toString(id) });
 	}
-	
-	public ArrayList<String> getAllContacts(){
+
+	public ArrayList<String> getAllContacts() {
 		SQLiteDatabase db = this.getWritableDatabase();
 		String sql = String.format("SELECT * FROM %s", TABLE_NAME);
 		Cursor res = db.rawQuery(sql, null);
 		ArrayList<String> contacts = new ArrayList<String>();
-		
+
 		res.moveToFirst();
-		while(res.isAfterLast()){
+		while (res.isAfterLast() == false) {
 			contacts.add(res.getString(res.getColumnIndex(CONTACTS_COLUMN_NAME)));
 			res.moveToNext();
 		}
